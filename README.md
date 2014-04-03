@@ -42,16 +42,16 @@ A sample application to demonstrate outbound call to a mobile or a landline phon
 1. Load the application in eclipse.
 2. Edit the source file `MainActivity.java`. Assign your endpoint username and password to the respective variables.
 
-
+```java
     public final static String PLIVO_USERNAME = "";
     public final static String PLIVO_PASSWORD = "";
-
+```
 
 3. Assign the mobile or the landline number you want to call to the `PLIVO_NUMBER` variable.
 
-
+```java
     public final static String PHONE_NUMBER = "";
-
+```
 
 4. Launch the application from eclipse. And hit the call button.
 
@@ -72,10 +72,10 @@ A sample application to demonstrate inbound calls.
 1. Load the application in eclipse.
 2. Edit the source file `MainActivity.java`. Assign your endpoint username and password to the respective variables.
 
-
+```java
     public final static String PLIVO_USERNAME = "";
     public final static String PLIVO_PASSWORD = "";
-
+```
 
 3. Launch the application from eclipse. 
 
