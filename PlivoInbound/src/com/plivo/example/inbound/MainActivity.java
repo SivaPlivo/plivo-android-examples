@@ -1,11 +1,15 @@
 package com.plivo.example.inbound;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ToggleButton;
+
 
 import com.plivo.endpoint.Endpoint;
 import com.plivo.endpoint.EventListener;
@@ -24,6 +28,7 @@ public class MainActivity extends Activity implements EventListener {
 	
 	Endpoint endpoint = new Endpoint(true, this);
 	private Incoming incoming;
+	private AudioManager myAudioManager;
 	
 
 	@Override
@@ -108,6 +113,15 @@ public class MainActivity extends Activity implements EventListener {
 		hangup_button.setClickable(false);
 		answer_button.setEnabled(false);
 		answer_button.setClickable(false);	
+	}
+	
+	public void speakerOn(View view) {
+	       Log.v("PlivoOutbound", "Speaker on...");
+	       myAudioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+	       if (((ToggleButton) view).isChecked())
+	           myAudioManager.setSpeakerphoneOn(true);
+	       else
+	           myAudioManager.setSpeakerphoneOn(false);
 	}
 	
 	public void onIncomingCallRejected(Incoming incoming) {

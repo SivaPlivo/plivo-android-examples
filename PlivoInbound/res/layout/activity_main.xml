@@ -32,5 +32,15 @@
         android:enabled="false"
         android:onClick="hangupNow"
         android:text="@string/hangup_now" />
+    <ToggleButton        
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textOff="Speaker"
+       android:textOn="Speaker Off"
+       android:id="@+id/speaker"
+       android:onClick="speakerOn"
+       android:layout_marginTop="47dp"
+       android:layout_below="@+id/call_btn"
+       android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
