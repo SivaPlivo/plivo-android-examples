@@ -1,15 +1,16 @@
 package com.plivo.example.inbound;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.media.AudioManager;
-import android.widget.ToggleButton;
 import android.content.Intent;
-import android.content.Context;
+import android.widget.ToggleButton;
+
 
 import com.plivo.endpoint.Endpoint;
 import com.plivo.endpoint.EventListener;
@@ -40,6 +41,14 @@ public class MainActivity extends Activity implements EventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -173,9 +182,11 @@ public class MainActivity extends Activity implements EventListener {
     public void onOutgoingCallHangup(Outgoing outgoing) {
         
     }
+
     public void onOutgoingCallInvalid(Outgoing outgoing) {
         Log.v("PlivoOutbound", "Call Invalid...");
     }
+
     public void onOutgoingCallRejected(Outgoing outgoing) {
         Log.v("PlivoOutbound", "call rejected...");
     }
