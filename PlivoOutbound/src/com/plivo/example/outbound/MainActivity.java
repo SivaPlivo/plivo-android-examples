@@ -177,7 +177,8 @@ public class MainActivity extends Activity implements EventListener {
 
     public void onOutgoingCallAnswered(Outgoing outgoing) {
         Log.v("PlivoOutbound", "call answered...");
-    }    public void onOutgoingCallRejected(Outgoing outgoing) {
+    }    
+    public void onOutgoingCallRejected(Outgoing outgoing) {
         Log.v("PlivoOutbound", "call rejected...");
     }
     public void onOutgoingCallHangup(Outgoing outgoing) {
