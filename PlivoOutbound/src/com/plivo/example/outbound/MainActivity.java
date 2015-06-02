@@ -25,8 +25,8 @@ public class MainActivity extends Activity implements EventListener {
 
     public final static String EXTRA_MESSAGE = "com.plivo.example.MESSAGE";
     // Edit the variables below with your Plivo endpoint username and password
-    public final static String PLIVO_USERNAME = "";
-    public final static String PLIVO_PASSWORD = "";
+    public final static String PLIVO_USERNAME = "sammytest1150519064935";
+    public final static String PLIVO_PASSWORD = "thanks123";
 
     // Edit the PHONE_NUMBER with the number you want to make the call to
     public static String PHONE_NUMBER = "";
@@ -176,11 +176,14 @@ public class MainActivity extends Activity implements EventListener {
     }
 
     public void onOutgoingCallAnswered(Outgoing outgoing) {
-
+        Log.v("PlivoOutbound", "call answered...");
+    }    public void onOutgoingCallRejected(Outgoing outgoing) {
+        Log.v("PlivoOutbound", "call rejected...");
     }
-
     public void onOutgoingCallHangup(Outgoing outgoing) {
-        Log.v("PlivoOutbound", "Hang up...");
-
+        Log.v("PlivoOutbound", "Hanged up from other side...");
+    }
+    public void onOutgoingCallInvalid(Outgoing outgoing) {
+        Log.v("PlivoOutbound", "Call Invalid...");
     }
 }
