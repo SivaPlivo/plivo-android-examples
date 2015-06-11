@@ -25,8 +25,8 @@ public class MainActivity extends Activity implements EventListener {
 
     public final static String EXTRA_MESSAGE = "com.plivo.example.MESSAGE";
     // Edit the variables below with your Plivo endpoint username and password
-    public final static String PLIVO_USERNAME = "sammytest1150519064935";
-    public final static String PLIVO_PASSWORD = "thanks123";
+    public final static String PLIVO_USERNAME = "";
+    public final static String PLIVO_PASSWORD = "";
 
     // Edit the PHONE_NUMBER with the number you want to make the call to
     public static String PHONE_NUMBER = "";
@@ -45,6 +45,14 @@ public class MainActivity extends Activity implements EventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         number = (EditText) findViewById(R.id.number);
+    }
+
+	public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        Intent setIntent = new Intent(Intent.ACTION_MAIN);
+        setIntent.addCategory(Intent.CATEGORY_HOME);
+        setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(setIntent);
     }
 
     @Override
