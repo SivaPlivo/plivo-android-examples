@@ -27,12 +27,11 @@ public class MainActivity extends Activity implements EventListener {
     // Edit the variables below with your Plivo endpoint username and password
     public final static String PLIVO_USERNAME = "";
     public final static String PLIVO_PASSWORD = "";
-
-    // Edit the PHONE_NUMBER with the number you want to make the call to
+  
     public static String PHONE_NUMBER = "";
     private EditText number;
     private AudioManager myAudioManager;
-    Endpoint endpoint = Endpoint.newInstance(true, this);
+    Endpoint endpoint = Endpoint.newInstance(false, this);
     Outgoing outgoing = new Outgoing(endpoint);
 
     // private final Context context;
@@ -118,7 +117,7 @@ public class MainActivity extends Activity implements EventListener {
     }
 
     public void speakerOn(View view) {
-        Log.v("PlivoOutbound", "Speaker on...");
+        Log.v("PlivoOutbound", "Speaker btn pressed...");
         myAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         if (((ToggleButton) view).isChecked())
             myAudioManager.setSpeakerphoneOn(true);
@@ -127,6 +126,15 @@ public class MainActivity extends Activity implements EventListener {
 
     }
 
+    public void muteOn(View view){
+        if (((ToggleButton) view).isChecked()) {
+            Log.v("PlivoPhone", "Mute");
+            outgoing.mute();
+        }else{
+            Log.v("PlivoPhone", "Unmute");
+            outgoing.unmute();
+        }
+    }
     public void onLogin() {
         Log.v("PlivoOutbound", "Logging in");
 
@@ -175,12 +183,20 @@ public class MainActivity extends Activity implements EventListener {
                 Toast.LENGTH_LONG).show();
     }
 
-    public void onOutgoingCallAnswered(Outgoing outgoing) {
 
+    public void onOutgoingCallAnswered(Outgoing outgoing) {
+        Log.v("PlivoOutbound", "call answered...");
     }
 
+    public void onOutgoingCallRejected(Outgoing outgoing) {
+        Log.v("PlivoOutbound", "call rejected...");
+    }
     public void onOutgoingCallHangup(Outgoing outgoing) {
-        Log.v("PlivoOutbound", "Hang up...");
-
+        Log.v("PlivoOutbound", "Hanged up from other side...");
+    }
+    public void onOutgoingCallInvalid(Outgoing outgoing) {
+        Log.v("PlivoOutbound", "Call Invalid...");
     }
 }
+
+

@@ -56,7 +56,7 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="Type a number to call..."
-        android:inputType="phone" />
+         />
     <Button
         android:id="@+id/contacts"
         android:layout_width="wrap_content"
@@ -64,8 +64,11 @@
         android:layout_above="@+id/call_btn"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="18dp"
+        android:background="#FFFF00"
         android:text="Contacts"
+
         android:onClick="getContacts"
+        android:layout_below="@+id/number"
         />
 
     <ToggleButton
@@ -75,9 +78,20 @@
         android:textOn="Speaker Off"
         android:id="@+id/speaker"
         android:onClick="speakerOn"
-        android:layout_marginTop="54dp"
+
+        android:layout_marginTop="62dp"
         android:layout_below="@+id/call_btn"
-        android:layout_alignLeft="@+id/contacts"
-        android:layout_toLeftOf="@+id/hangup_btn" />
+        android:layout_alignLeft="@+id/call_btn" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/muteBtn"
+        android:layout_alignTop="@+id/speaker"
+        android:layout_alignLeft="@+id/hangup_btn"
+        android:onClick="muteOn"
+        android:textOff="Mute"
+        android:textOn="Unmute"
+        android:layout_alignRight="@+id/hangup_btn" />
 
 </RelativeLayout>
