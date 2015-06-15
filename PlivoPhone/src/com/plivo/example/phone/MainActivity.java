@@ -17,7 +17,7 @@ import com.plivo.endpoint.Outgoing;
 public class MainActivity extends Activity implements EventListener {
 	
 	public final static String EXTRA_MESSAGE = "com.plivo.example.MESSAGE";
-	Endpoint endpoint = new Endpoint(true, this);
+	Endpoint endpoint = Endpoint.newInstance(true, this);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
