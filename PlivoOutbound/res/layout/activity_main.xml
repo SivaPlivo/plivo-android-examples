@@ -89,6 +89,7 @@
         android:id="@+id/muteBtn"
         android:layout_alignTop="@+id/speaker"
         android:layout_alignLeft="@+id/hangup_btn"
+        android:clickable="false"
         android:onClick="muteOn"
         android:textOff="Mute"
         android:textOn="Unmute"

@@ -109,11 +109,14 @@ public class MainActivity extends Activity implements EventListener {
         outgoing.hangup();
         Button hangup_button = ((Button) findViewById(R.id.hangup_btn));
         Button call_button = ((Button) findViewById(R.id.call_btn));
+        ToggleButton mute_button = ((ToggleButton)findViewById(R.id.muteBtn));
         hangup_button.setEnabled(false);
         hangup_button.setClickable(false);
-
         call_button.setEnabled(true);
         call_button.setClickable(true);
+        mute_button.setChecked(false);
+        mute_button.setClickable(false);
+
     }
 
     public void speakerOn(View view) {
@@ -175,28 +178,50 @@ public class MainActivity extends Activity implements EventListener {
         Log.v("PlivoOutbound", "Calling...");
         Button hangup_button = ((Button) findViewById(R.id.hangup_btn));
         Button call_button = ((Button) findViewById(R.id.call_btn));
+
         hangup_button.setEnabled(true);
         hangup_button.setClickable(true);
         call_button.setEnabled(false);
         call_button.setClickable(false);
         Toast.makeText(getApplicationContext(), "Clicked Call",
                 Toast.LENGTH_LONG).show();
+        //mute_button.setChecked(true);
+
     }
 
 
     public void onOutgoingCallAnswered(Outgoing outgoing) {
+
         Log.v("PlivoOutbound", "call answered...");
+        runOnUiThread(
+                new Runnable() {
+                    public void run() {
+                        ToggleButton mute_button = ((ToggleButton) findViewById(R.id.muteBtn));
+                        mute_button.setClickable(true);
+                    }
+                });
     }
 
     public void onOutgoingCallRejected(Outgoing outgoing) {
         Log.v("PlivoOutbound", "call rejected...");
+        runOnUiThread(
+                new Runnable() {
+                    public void run() {
+                        Button hangup_button = ((Button) findViewById(R.id.hangup_btn));
+                        Button call_button = ((Button) findViewById(R.id.call_btn));
+                        ToggleButton mute_button = ((ToggleButton)findViewById(R.id.muteBtn));
+                        hangup_button.setEnabled(false);
+                        hangup_button.setClickable(false);
+                        call_button.setEnabled(true);
+                        call_button.setClickable(true);
+                        mute_button.setChecked(false);
+                        mute_button.setClickable(false);
+                    }
+                });
     }
     public void onOutgoingCallHangup(Outgoing outgoing) {
-        Log.v("PlivoOutbound", "Hanged up from other side...");
     }
     public void onOutgoingCallInvalid(Outgoing outgoing) {
         Log.v("PlivoOutbound", "Call Invalid...");
     }
 }
-
-
