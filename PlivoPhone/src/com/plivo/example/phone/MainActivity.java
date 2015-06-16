@@ -92,6 +92,12 @@ public class MainActivity extends Activity implements EventListener {
 		
 	}
 	
+	public void onOutgoingCallRejected(Outgoing outgoing) {
+    }
+    
+    public void onOutgoingCallInvalid(Outgoing outgoing) {
+    }
+	
 	public void onOutgoingCallAnswered(Outgoing outgoing) {
 		
 	}
