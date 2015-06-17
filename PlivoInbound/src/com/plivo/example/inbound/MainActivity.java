@@ -25,17 +25,22 @@ public class MainActivity extends Activity implements EventListener {
     // Edit the variables below with your Plivo endpoint username and password
     public final static String PLIVO_USERNAME = "";
     public final static String PLIVO_PASSWORD = "";
+    Endpoint endpoint = Endpoint.newInstance(false, this);
+    private Incoming incoming;
+    private AudioManager myAudioManager;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		
-		Log.v("PlivoInbound", "Trying to log in");
-		endpoint.login(PLIVO_USERNAME, PLIVO_PASSWORD);
-		
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
-	public void onBackPressed() {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+           
+        Log.v("PlivoInbound", "Trying to log in");
+        endpoint.login(PLIVO_USERNAME, PLIVO_PASSWORD);
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void onBackPressed() {
         Log.d("CDA", "onBackPressed Called");
         Intent setIntent = new Intent(Intent.ACTION_MAIN);
         setIntent.addCategory(Intent.CATEGORY_HOME);
@@ -43,21 +48,13 @@ public class MainActivity extends Activity implements EventListener {
         startActivity(setIntent);
     }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-	
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-    
+
     public void hangupNow(View view) {
         Log.v("PlivoInbound", "Hanging up...");
         incoming.hangup();
@@ -86,13 +83,6 @@ public class MainActivity extends Activity implements EventListener {
         answer_button.setClickable(false);
         mute_button.setClickable(true);
 
-    }
-    public void onBackPressed() {
-        Log.d("CDA", "onBackPressed Called");
-        Intent setIntent = new Intent(Intent.ACTION_MAIN);
-        setIntent.addCategory(Intent.CATEGORY_HOME);
-        setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(setIntent);
     }
     
     public void onLogin() {
