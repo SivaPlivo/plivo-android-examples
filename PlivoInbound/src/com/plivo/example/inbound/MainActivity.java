@@ -26,20 +26,21 @@ public class MainActivity extends Activity implements EventListener {
     public final static String PLIVO_USERNAME = "";
     public final static String PLIVO_PASSWORD = "";
 
-    
-    Endpoint endpoint = Endpoint.newInstance(true, this);
-    private Incoming incoming;
-    private AudioManager myAudioManager;
-    
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        
-        Log.v("PlivoInbound", "Trying to log in");
-        endpoint.login(PLIVO_USERNAME, PLIVO_PASSWORD);
-        
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		Log.v("PlivoInbound", "Trying to log in");
+		endpoint.login(PLIVO_USERNAME, PLIVO_PASSWORD);
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+	public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        Intent setIntent = new Intent(Intent.ACTION_MAIN);
+        setIntent.addCategory(Intent.CATEGORY_HOME);
+        setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(setIntent);
     }
 
 	@Override
