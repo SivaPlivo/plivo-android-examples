@@ -155,7 +155,21 @@ public class MainActivity extends Activity implements EventListener {
     }
 
     public void onIncomingCallRejected(Incoming incoming) {
-        
+        Log.v("PlivoInbound", "Call ended");
+        runOnUiThread(
+                new Runnable() {
+                    public void run() {
+                        Button hangup_button = ((Button) findViewById(R.id.hangup_btn));
+                        Button answer_button = ((Button) findViewById(R.id.answer_btn));
+                        ToggleButton mute_button = ((ToggleButton) findViewById(R.id.muteBtn));
+                        hangup_button.setEnabled(false);
+                        hangup_button.setClickable(false);
+                        answer_button.setEnabled(false);
+                        answer_button.setClickable(false);
+                        mute_button.setChecked(false);
+                        mute_button.setClickable(false);
+                    }
+                });
     }
     
     /**
