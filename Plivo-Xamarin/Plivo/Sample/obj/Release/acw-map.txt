@@ -1,0 +1,16 @@
+Sample.MainActivity, Sample;md5e44603b235f21ebfbb6b3d0f2dc433d5.MainActivity
+Sample.MainActivity, Sample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5e44603b235f21ebfbb6b3d0f2dc433d5.MainActivity
+Sample.MainActivity;md5e44603b235f21ebfbb6b3d0f2dc433d5.MainActivity
+sample.MainActivity;md5e44603b235f21ebfbb6b3d0f2dc433d5.MainActivity
+Sample.Incoming_Call, Sample;md5e44603b235f21ebfbb6b3d0f2dc433d5.Incoming_Call
+Sample.Incoming_Call, Sample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5e44603b235f21ebfbb6b3d0f2dc433d5.Incoming_Call
+Sample.Incoming_Call;md5e44603b235f21ebfbb6b3d0f2dc433d5.Incoming_Call
+sample.Incoming_Call;md5e44603b235f21ebfbb6b3d0f2dc433d5.Incoming_Call
+Sample.Outgoing_Call, Sample;md5e44603b235f21ebfbb6b3d0f2dc433d5.Outgoing_Call
+Sample.Outgoing_Call, Sample, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5e44603b235f21ebfbb6b3d0f2dc433d5.Outgoing_Call
+Sample.Outgoing_Call;md5e44603b235f21ebfbb6b3d0f2dc433d5.Outgoing_Call
+sample.Outgoing_Call;md5e44603b235f21ebfbb6b3d0f2dc433d5.Outgoing_Call
+Com.Plivo.Endpoint.IEventListenerImplementor, Plivo;mono.com.plivo.endpoint.EventListenerImplementor
+Com.Plivo.Endpoint.IEventListenerImplementor, Plivo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.com.plivo.endpoint.EventListenerImplementor
+Com.Plivo.Endpoint.IEventListenerImplementor;mono.com.plivo.endpoint.EventListenerImplementor
+com.plivo.endpoint.IEventListenerImplementor;mono.com.plivo.endpoint.EventListenerImplementor

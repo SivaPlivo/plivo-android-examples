@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<api>
+<package name="com.plivo.endpoint">
+<class abstract="false" deprecated="not deprecated" extends="com.plivo.endpoint.backend.PlivoAppCallback" extends-generic-aware="com.plivo.endpoint.backend.PlivoAppCallback" final="false" name="BackendListener" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="BackendListener" static="false" type="com.plivo.endpoint.BackendListener" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.Endpoint">
+</parameter>
+<parameter name="p2" type="com.plivo.endpoint.EventListener">
+</parameter>
+</constructor>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Endpoint" static="false" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="checkDtmfDigit" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="createOutgoingCall" native="false" return="com.plivo.endpoint.Outgoing" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getOutgoing" native="false" return="com.plivo.endpoint.Outgoing" static="false" synchronized="false" visibility="protected">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getRegistered" native="false" return="boolean" static="false" synchronized="false" visibility="protected">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="login" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="logout" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="newInstance" native="false" return="com.plivo.endpoint.Endpoint" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="boolean">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.EventListener">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setRegistered" native="false" return="void" static="false" synchronized="false" visibility="protected">
+<parameter name="p0" type="boolean">
+</parameter>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="EventListener" static="false" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onIncomingCall" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Incoming">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onIncomingCallHangup" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Incoming">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onIncomingCallRejected" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Incoming">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onLogin" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onLoginFailed" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onLogout" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onOutgoingCall" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Outgoing">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onOutgoingCallAnswered" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Outgoing">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onOutgoingCallHangup" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Outgoing">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onOutgoingCallInvalid" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Outgoing">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onOutgoingCallRejected" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Outgoing">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Global" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Global" static="false" type="com.plivo.endpoint.Global" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="false" name="DEBUG" static="true" transient="false" type="boolean" type-generic-aware="boolean" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Incoming" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Incoming" static="false" type="com.plivo.endpoint.Incoming" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="answer" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCallId" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFromContact" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getFromSip" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getToContact" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getToSip" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="hangup" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="isActive" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="mute" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="reject" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="sendDigits" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="unmute" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="Outgoing" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="Outgoing" static="false" type="com.plivo.endpoint.Outgoing" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.Endpoint">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="call" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCallId" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getToContact" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="hangup" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="isActive" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="mute" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="sendDigits" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setCallId" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setToContact" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="unmute" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="false" name="pjsuaCallId" static="false" transient="false" type="int" type-generic-aware="int" visibility="protected" volatile="false">
+</field>
+</class>
+</package>
+<package name="com.plivo.endpoint.backend">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="PlivoAppCallback" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="PlivoAppCallback" static="false" type="com.plivo.endpoint.backend.PlivoAppCallback" visibility="public">
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="PlivoAppCallback" static="false" type="com.plivo.endpoint.backend.PlivoAppCallback" visibility="protected">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="boolean">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="delete" native="false" return="void" static="false" synchronized="true" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCPtr" native="false" return="long" static="true" synchronized="false" visibility="protected">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onDebugMessage" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onIncomingCall" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onIncomingCallHangup" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onIncomingCallRejected" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onLogin" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onLoginFailed" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onLogout" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onOutgoingCall" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onOutgoingCallAnswered" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onOutgoingCallHangup" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onOutgoingCallInvalid" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onOutgoingCallRejected" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onOutgoingCallRinging" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onStarted" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onStopped" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="swigDirectorDisconnect" native="false" return="void" static="false" synchronized="false" visibility="protected">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="swigReleaseOwnership" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="swigTakeOwnership" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="false" name="swigCMemOwn" static="false" transient="false" type="boolean" type-generic-aware="boolean" visibility="protected" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="plivo" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="plivo" static="false" type="com.plivo.endpoint.backend.plivo" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="Answer" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="Call" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="Hangup" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="Login" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="Logout" native="false" return="int" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="Mute" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="Reject" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SendDTMF" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="UnMute" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="plivoDestroy" native="false" return="void" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="plivoRestart" native="false" return="int" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="plivoStart" native="false" return="int" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setCallbackObject" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="plivoJNI" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="plivoJNI" static="false" type="com.plivo.endpoint.backend.plivoJNI" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="true" name="Answer" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="Call" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="Hangup" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="Login" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="Logout" native="true" return="int" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="Mute" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_change_ownership" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="long">
+</parameter>
+<parameter name="p2" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_director_connect" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="long">
+</parameter>
+<parameter name="p2" type="boolean">
+</parameter>
+<parameter name="p3" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onDebugMessage" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onDebugMessageSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onIncomingCall" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+<parameter name="p4" type="java.lang.String">
+</parameter>
+<parameter name="p5" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onIncomingCallHangup" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onIncomingCallHangupSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onIncomingCallRejected" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onIncomingCallRejectedSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onIncomingCallSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+<parameter name="p4" type="java.lang.String">
+</parameter>
+<parameter name="p5" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onLogin" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onLoginFailed" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onLoginFailedSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onLoginSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onLogout" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onLogoutSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCall" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallAnswered" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallAnsweredSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallHangup" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallHangupSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallInvalid" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallInvalidSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallRejected" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallRejectedSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallRinging" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallRingingSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onOutgoingCallSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onStarted" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onStartedSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onStopped" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="PlivoAppCallback_onStoppedSwigExplicitPlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="Reject" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="SendDTMF" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onDebugMessage" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onIncomingCall" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+<parameter name="p3" type="java.lang.String">
+</parameter>
+<parameter name="p4" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onIncomingCallHangup" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onIncomingCallRejected" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onLogin" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onLoginFailed" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onLogout" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onOutgoingCall" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onOutgoingCallAnswered" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onOutgoingCallHangup" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onOutgoingCallInvalid" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onOutgoingCallRejected" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onOutgoingCallRinging" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onStarted" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="SwigDirector_PlivoAppCallback_onStopped" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="UnMute" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="delete_PlivoAppCallback" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="new_PlivoAppCallback" native="true" return="long" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="plivoDestroy" native="true" return="void" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="plivoRestart" native="true" return="int" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="plivoStart" native="true" return="int" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="true" name="setCallbackObject" native="true" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="com.plivo.endpoint.backend.PlivoAppCallback">
+</parameter>
+</method>
+</class>
+</package>
+</api>

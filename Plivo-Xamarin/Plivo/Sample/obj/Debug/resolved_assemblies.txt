@@ -1,0 +1,2 @@
+/Users/plivo/Projects/Plivo/Sample/obj/Debug/assemblies/Sample.dll
+/Users/plivo/Projects/Plivo/Sample/obj/Debug/assemblies/Plivo.dll
