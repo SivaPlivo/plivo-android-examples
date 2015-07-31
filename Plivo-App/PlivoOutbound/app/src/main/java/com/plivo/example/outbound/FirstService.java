@@ -20,8 +20,9 @@ import com.plivo.endpoint.Outgoing;
  */
 public class FirstService extends Service implements EventListener {
 
-    public final static String PLIVO_USERNAME = "sammytest1150519064935"; //  sammytest1150519064935
-    public final static String PLIVO_PASSWORD = "thanks123";
+    public final static String PLIVO_USERNAME = ""; 
+    public final static String PLIVO_PASSWORD = "";
+    //add username and password 
     private AudioManager audioManager;
     Endpoint endpoint = Endpoint.newInstance(false, this);
     Incoming incoming;
