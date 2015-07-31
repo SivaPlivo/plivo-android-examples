@@ -1,0 +1,7 @@
+/Users/plivo/Projects/Plivo/Plivo/obj/Release/MonoAndroid,Version=v5.0.AssemblyAttribute.cs
+/Users/plivo/Projects/Plivo/Plivo/obj/Release/Plivo.Jars.plivoendpoint.jar
+/Users/plivo/Projects/Plivo/Plivo/obj/Release/Plivo.obj.Release.__AndroidNativeLibraries__.zip
+/Users/plivo/Projects/Plivo/Plivo/bin/Release/Plivo.dll.mdb
+/Users/plivo/Projects/Plivo/Plivo/bin/Release/Plivo.dll
+/Users/plivo/Projects/Plivo/Plivo/obj/Release/Plivo.dll
+/Users/plivo/Projects/Plivo/Plivo/obj/Release/Plivo.dll.mdb

@@ -1,0 +1,6 @@
+/Users/plivo/Projects/Plivo/Sample/obj/Release/assemblies/Sample.dll
+/Users/plivo/Projects/Plivo/Sample/obj/Release/assemblies/System.dll
+/Users/plivo/Projects/Plivo/Sample/obj/Release/assemblies/Mono.Android.dll
+/Users/plivo/Projects/Plivo/Sample/obj/Release/assemblies/Plivo.dll
+/Users/plivo/Projects/Plivo/Sample/obj/Release/assemblies/System.Core.dll
+/Users/plivo/Projects/Plivo/Sample/obj/Release/assemblies/mscorlib.dll

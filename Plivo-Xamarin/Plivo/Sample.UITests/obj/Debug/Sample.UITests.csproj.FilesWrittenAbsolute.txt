@@ -1,0 +1,7 @@
+/Users/plivo/Projects/Plivo/Sample.UITests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/plivo/Projects/Plivo/Sample.UITests/bin/Debug/Sample.UITests.dll.mdb
+/Users/plivo/Projects/Plivo/Sample.UITests/bin/Debug/Sample.UITests.dll
+/Users/plivo/Projects/Plivo/Sample.UITests/obj/Debug/Sample.UITests.dll
+/Users/plivo/Projects/Plivo/Sample.UITests/obj/Debug/Sample.UITests.dll.mdb
+/Users/plivo/Projects/Plivo/Sample.UITests/bin/Debug/nunit.framework.dll
+/Users/plivo/Projects/Plivo/Sample.UITests/bin/Debug/Xamarin.UITest.dll
