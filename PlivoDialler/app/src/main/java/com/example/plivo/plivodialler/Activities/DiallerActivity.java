@@ -57,10 +57,19 @@ public class DiallerActivity extends AppCompatActivity {
         mAdapter = new ContactsAdapter(this, contactList);
 
         showContacts.setAdapter(mAdapter);
+        showContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String phoneNumberString = processPhoneNumber(contactList.get(keyIterator.get(i)));
+                phoneNumber.setText(phoneNumberString);
+            }
+        });
 
         phoneNumber.addTextChangedListener(new TextWatcher() {
+            String before = "";
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                before = s.toString();
             }
 
             @Override
@@ -71,23 +80,16 @@ public class DiallerActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 ArrayList<String> reducedContacts;
                 String searchString = s.toString();
-                if (searchString != ""){
+                if (searchString != "" && (searchString.contains(before) || before.contains(searchString))){
                     contactList = incrementalSearch(searchString, getContacts());
                 }else{
                     contactList = getContacts();
                 }
 
+                keyIterator = getKeyList(contactList);
                 mAdapter = new ContactsAdapter(DiallerActivity.this, contactList);
                 showContacts.setAdapter(mAdapter);
                 mAdapter.notifyDataSetChanged();
-            }
-        });
-
-        showContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String phoneNumberString = processPhoneNumber(contactList.get(keyIterator.get(i)));
-                phoneNumber.setText(phoneNumberString);
             }
         });
 
