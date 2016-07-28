@@ -5,11 +5,15 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.plivo.plivodialler.Adapters.ContactsAdapter;
 import com.example.plivo.plivodialler.Utils.CommManager;
@@ -18,6 +22,7 @@ import com.example.plivo.plivodialler.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -50,7 +55,34 @@ public class DiallerActivity extends AppCompatActivity {
         keyIterator = getKeyList(contactList);
 
         mAdapter = new ContactsAdapter(this, contactList);
+
         showContacts.setAdapter(mAdapter);
+
+        phoneNumber.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                ArrayList<String> reducedContacts;
+                String searchString = s.toString();
+                if (searchString != ""){
+                    contactList = incrementalSearch(searchString, getContacts());
+                }else{
+                    contactList = getContacts();
+                }
+
+                mAdapter = new ContactsAdapter(DiallerActivity.this, contactList);
+                showContacts.setAdapter(mAdapter);
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+
         showContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -68,6 +100,18 @@ public class DiallerActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public Map<String, String> incrementalSearch(String name, Map<String, String> contactList){
+        Map<String, String> reducedList = new HashMap<String, String>();
+        ArrayList<String> keyList = getKeyList(contactList);
+        for (int i = 0; i < keyList.size(); i++) {
+            String s = keyList.get(i);
+            if (s.contains(name)) {
+                reducedList.put(s, contactList.get(s));
+            }
+        }
+        return reducedList;
     }
 
     @Override
