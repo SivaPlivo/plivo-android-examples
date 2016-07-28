@@ -69,7 +69,7 @@ public class CommManager extends Application implements EventListener{
 
     @Override
     public void onLogout() {
-        loginStatus = "null";
+        loginStatus = null;
         Log.e(AppConstants.TAG_AppLog, "Logged Out");
     }
 

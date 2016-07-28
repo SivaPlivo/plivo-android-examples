@@ -35,9 +35,9 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/bLogin"
-        android:layout_below="@+id/endpointPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/tvError"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -46,5 +46,15 @@
         android:layout_above="@+id/endpointUsername"
         android:layout_centerHorizontal="true"
         android:src="@drawable/plivo_logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Login Failed"
+        android:id="@+id/tvError"
+        android:layout_below="@+id/endpointPassword"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorError"/>
 
 </RelativeLayout>

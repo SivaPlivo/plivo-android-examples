@@ -6,5 +6,8 @@ package com.example.plivo.plivodialler.Utils;
 public class AppConstants {
 
     public static String TAG_AppLog = "Plivo Log";
+    public static String PREF_Name = "PlivoDialler";
+    public static String PREF_UserName = "username";
+    public static String PREF_Password = "password";
 
 }

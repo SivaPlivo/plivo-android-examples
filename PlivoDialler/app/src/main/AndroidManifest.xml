@@ -24,7 +24,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.plivo.plivodialler.Activities.LoginActivity"
+        <activity
+            android:name=".Activities.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,10 +33,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.plivo.plivodialler.Activities.OngoingCall"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.example.plivo.plivodialler.Activities.DiallerActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Activities.OngoingCall"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.DiallerActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
