@@ -5,9 +5,9 @@ android {
     buildToolsVersion "24.0.0"
 
     defaultConfig {
-        applicationId "com.plivo.example.outbound"
-        minSdkVersion 9
-        targetSdkVersion 15
+        applicationId "com.plivo.example.phone"
+        minSdkVersion 8
+        targetSdkVersion 18
     }
 
     buildTypes {

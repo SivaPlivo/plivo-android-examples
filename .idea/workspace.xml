@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3580fc2-8559-40de-bb9c-6e08560714d4" name="Default" comment="" />
-    <ignored path="PlivoOutbound.iws" />
+    <list default="true" id="0df083c7-51d2-4e09-a0d2-8396c1ae3eb0" name="Default" comment="" />
+    <ignored path="PlivoPhone.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +17,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="PlivoOutbound" />
+    <favorites_list name="PlivoPhone" />
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -1310,7 +1310,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4409125044000" />
+        <entry key="$PROJECT_DIR$" value="4409125383000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1661,20 +1661,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PlivoOutbound" />
+              <option name="myItemId" value="PlivoPhone" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1847,10 +1847,10 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c3580fc2-8559-40de-bb9c-6e08560714d4" name="Default" comment="" />
-      <created>1469708461897</created>
+      <changelist id="0df083c7-51d2-4e09-a0d2-8396c1ae3eb0" name="Default" comment="" />
+      <created>1469708524142</created>
       <option name="number" value="Default" />
-      <updated>1469708461897</updated>
+      <updated>1469708524142</updated>
     </task>
     <servers />
   </component>

@@ -9,8 +9,6 @@ so manually move them:
 
 * README.md
 * ic_launcher-web.png
-* plivo_icon-web.png
-* plivo_logo-web.png
 * proguard-project.txt
 
 Replaced Jars with Dependencies:
@@ -31,7 +29,6 @@ Android Gradle projects use a different directory structure than ADT
 Eclipse projects. Here's how the projects were restructured:
 
 * AndroidManifest.xml => app/src/main/AndroidManifest.xml
-* assets/ => app/src/main/assets/
 * libs/armeabi/libpjplivo.so => app/src/main/jniLibs/armeabi/libpjplivo.so
 * libs/plivoendpoint.jar => app/libs/plivoendpoint.jar
 * res/ => app/src/main/res/
