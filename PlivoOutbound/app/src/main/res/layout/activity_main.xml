@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/call_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/call_button"
+        android:onClick="callNow"
+        android:text="@string/call_now"
+        android:enabled="false"
+        android:layout_alignTop="@+id/hangup_btn"
+        android:layout_toLeftOf="@+id/contacts" />
+
+    <Button
+        android:id="@+id/hangup_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hangup_button"
+        android:enabled="false"
+        android:onClick="hangupNow"
+        android:text="@string/hangup_now"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/contacts" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:gravity="center"
+        android:scaleType="center"
+        android:src="@drawable/plivo_logo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="25dp"
+        android:gravity="right"
+        android:layout_toLeftOf="@+id/number"
+        android:layout_alignBottom="@+id/number"
+        android:layout_alignTop="@+id/number"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:ems="13"
+        android:hint="Enter number with country code"
+        android:inputType="phone"
+        android:layout_above="@+id/contacts"
+        android:layout_centerHorizontal="true" />
+    <Button
+        android:id="@+id/contacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/call_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:text="PhoneBook"
+        android:onClick="getContacts"
+        />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="Speaker"
+        android:textOn="Speaker Off"
+        android:id="@+id/speaker"
+        android:onClick="speakerOn"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/hangup_btn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logout"
+        android:layout_alignParentTop="true"
+        android:onClick="logout"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
