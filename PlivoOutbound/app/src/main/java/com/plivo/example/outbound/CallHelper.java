@@ -1,8 +1,5 @@
 package com.plivo.example.outbound;
 
-/**
- * Created by lijo on 28/5/15.
- */
 public class CallHelper {
     public static String helpCall(String number) {
         String num;

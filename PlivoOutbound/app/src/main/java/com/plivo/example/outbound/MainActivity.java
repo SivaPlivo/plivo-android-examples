@@ -23,16 +23,14 @@ import com.plivo.endpoint.Outgoing;
 
 public class MainActivity extends Activity implements EventListener {
 
-    public final static String EXTRA_MESSAGE = "com.plivo.example.MESSAGE";
     // Edit the variables below with your Plivo endpoint username and password
-    public final static String PLIVO_USERNAME = "";
-    public final static String PLIVO_PASSWORD = "";
+    public final static String PLIVO_USERNAME = "#Enter Username";
+    public final static String PLIVO_PASSWORD = "#Enter Password";
 
     // Edit the PHONE_NUMBER with the number you want to make the call to
     public static String PHONE_NUMBER = " ";
     private EditText number;
     private Button hangup_button, call_button;
-    private AudioManager myAudioManager;
 
     Endpoint endpoint = Endpoint.newInstance(true, this);
     Outgoing outgoing = new Outgoing(endpoint);
@@ -121,7 +119,7 @@ public class MainActivity extends Activity implements EventListener {
 
     public void speakerOn(View view) {
         Log.v("PlivoOutbound", "Speaker on...");
-        myAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        AudioManager myAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         if (((ToggleButton) view).isChecked())
             myAudioManager.setSpeakerphoneOn(true);
         else
